@@ -1,0 +1,88 @@
+:root {
+    --neo-jade: #00ff9d;
+    --void-black: #00010a;
+    --neural-purple: #bd00ff;
+    --blood-rust: #ff3c00;
+    --hologram-teal: #00f7ff;
+}
+
+body {
+    margin: 0;
+    background: var(--void-black);
+    color: var(--neo-jade);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+}
+
+.neuro-interface {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.hologram-core {
+    position: relative;
+    animation: quantum-flicker 0.1s infinite alternate;
+}
+
+.dna-helix {
+    width: 400px;
+    height: 600px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 3px,
+        var(--neural-purple) 3px,
+        var(--neural-purple) 6px
+    );
+    mask: radial-gradient(circle at center, black 30%, transparent 70%);
+}
+
+.quantum-glyphs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    opacity: 0.3;
+}
+
+.bio-portals {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.portal {
+    width: 300px;
+    height: 300px;
+    border: 3px solid var(--blood-rust);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.portal-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+        var(--hologram-teal) 0%,
+        transparent 70%
+    );
+    animation: portal-spin 20s linear infinite;
+}
+
+@keyframes quantum-flicker {
+    0% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+
+@keyframes portal-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
