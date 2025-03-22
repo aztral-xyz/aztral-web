@@ -1,3 +1,28 @@
+<html>
+<head>
+    <title>aztral.xyz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 2s ease-out;
+        }
+    </style>
+    <script>
+        // Redirect to index.html after 3 seconds
+        setTimeout(function() {
+            window.location.href = 'main.html';
+        }, 3000);
+    </script>
+</head>
+<body class="bg-[#313131] flex items-center justify-center min-h-screen">
+    <h1 class="text-white text-4xl font-bold animate-fadeIn">aztral.xyz</h1>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
