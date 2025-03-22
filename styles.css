@@ -1,88 +1,116 @@
 :root {
-    --neo-jade: #00ff9d;
-    --void-black: #00010a;
-    --neural-purple: #bd00ff;
-    --blood-rust: #ff3c00;
-    --hologram-teal: #00f7ff;
+    --primary-bg: #0a0a0a;
+    --secondary-bg: rgba(26, 26, 26, 0.8);
+    --accent-purple: #7d4fff;
+    --text-light: #f0f0f0;
+    --glow-shadow: 0 0 15px rgba(125, 79, 255, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
 }
 
 body {
     margin: 0;
-    background: var(--void-black);
-    color: var(--neo-jade);
-    font-family: 'Space Grotesk', sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-light);
+    font-family: 'Orbitron', sans-serif;
     overflow: hidden;
 }
 
-.neuro-interface {
+#three-container {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
-
-.hologram-core {
-    position: relative;
-    animation: quantum-flicker 0.1s infinite alternate;
-}
-
-.dna-helix {
-    width: 400px;
-    height: 600px;
-    background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 3px,
-        var(--neural-purple) 3px,
-        var(--neural-purple) 6px
-    );
-    mask: radial-gradient(circle at center, black 30%, transparent 70%);
-}
-
-.quantum-glyphs {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    opacity: 0.3;
-}
-
-.bio-portals {
-    position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.portal {
-    width: 300px;
-    height: 300px;
-    border: 3px solid var(--blood-rust);
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.portal-inner {
-    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, 
-        var(--hologram-teal) 0%,
-        transparent 70%
-    );
-    animation: portal-spin 20s linear infinite;
+    z-index: -1;
 }
 
-@keyframes quantum-flicker {
-    0% { opacity: 0.9; }
-    100% { opacity: 1; }
+.main-content {
+    text-align: center;
+    margin-top: 20vh;
+    position: relative;
+    z-index: 1;
 }
 
-@keyframes portal-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    text-shadow: var(--glow-shadow);
+    margin-bottom: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nav-item {
+    padding: 12px 24px;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--glow-shadow);
+}
+
+.nav-item:hover {
+    background: var(--accent-purple);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+.discord-btn {
+    background: var(--accent-purple);
+    color: var(--primary-bg);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--glow-shadow);
+}
+
+.discord-btn:hover {
+    background: #5a2de2;
+    transform: scale(1.05);
+}
+
+.subtext {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--accent-purple);
+    opacity: 0.8;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-purple);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease, width 0.1s ease, height 0.1s ease;
 }
