@@ -37,6 +37,12 @@
             text-shadow: var(--glow-shadow), 0 0 20px var(--accent-purple), 0 0 40px var(--accent-purple);
         }
     </style>
+    <script>
+        // Redirect to index.html after the animation completes (4 seconds)
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 4000); // 4 seconds = fade in (2s) + fade out (2s)
+    </script>
 </head>
 <body>
     <h1 class="initial-h1 animate-fadeInOut">aztral.xyz</h1>
