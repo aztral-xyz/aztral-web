@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your styles.css -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Fade-in animation */
-        @keyframes fadeIn {
+        /* Fade-in and fade-out animation */
+        @keyframes fadeInOut {
             0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
         }
-        .animate-fadeIn {
-            animation: fadeIn 2s ease-out;
+        .animate-fadeInOut {
+            animation: fadeInOut 4s ease-in-out forwards;
         }
 
         /* Ensure the body takes full height and centers content */
@@ -26,6 +26,7 @@
             min-height: 100vh;
             margin: 0;
             overflow: hidden;
+            background: var(--primary-bg); /* Black background */
         }
 
         /* Override h1 styles for the initial animation */
@@ -34,29 +35,10 @@
             font-weight: 700;
             color: var(--accent-purple);
             text-shadow: var(--glow-shadow), 0 0 20px var(--accent-purple), 0 0 40px var(--accent-purple);
-            animation: float 3s ease-in-out infinite, fadeIn 2s ease-out;
         }
     </style>
-    <script>
-        // Redirect to main.html after 3 seconds
-        setTimeout(function() {
-            window.location.href = 'main.html';
-        }, 3000);
-    </script>
 </head>
 <body>
-    <h1 class="initial-h1 animate-fadeIn">aztral.xyz</h1>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="app.js"></script>
-    <script src="backup.js"></script>
-    <script src="shader-vertex.js"></script>
-    <script src="shader-fragment.js"></script>
-    <script src="audio-handler.js"></script>
-    <script src="cursor.js"></script>
-    <script src="data-loader.js"></script>
-    <script src="websocket.js"></script>
-    <script src="script.js"></script>
+    <h1 class="initial-h1 animate-fadeInOut">aztral.xyz</h1>
 </body>
 </html>
