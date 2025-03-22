@@ -1,27 +1,21 @@
 :root {
-    --primary-bg: #0a0a0a; /* Black background */
+    --primary-bg: #0a0a0a;
     --secondary-bg: rgba(26, 26, 26, 0.8);
-    --accent-purple: #7d4fff; /* Purple accent color */
-    --text-light: #f0f0f0; /* Light text color */
-    --glow-shadow: 0 0 15px rgba(125, 79, 255, 0.5); /* Purple glow shadow */
+    --accent-purple: #7d4fff;
+    --text-light: #f0f0f0;
+    --glow-shadow: 0 0 15px rgba(125, 79, 255, 0.5);
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-/* Body styles */
 body {
     margin: 0;
     background: var(--primary-bg);
     color: var(--text-light);
     font-family: 'Orbitron', sans-serif;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
 }
 
-/* Three.js container */
 #three-container {
     position: fixed;
     top: 0;
@@ -31,7 +25,6 @@ body {
     z-index: -1;
 }
 
-/* Main content styles */
 .main-content {
     text-align: center;
     margin-top: 20vh;
@@ -39,16 +32,15 @@ body {
     z-index: 1;
 }
 
-/* Initial h1 styles for the fade-in animation */
-.initial-h1 {
-    font-size: 4rem;
+h1 {
+    font-size: 3.5rem;
     font-weight: 700;
     color: var(--accent-purple);
-    text-shadow: var(--glow-shadow), 0 0 20px var(--accent-purple), 0 0 40px var(--accent-purple);
-    animation: float 3s ease-in-out infinite, fadeIn 2s ease-out;
+    text-shadow: var(--glow-shadow);
+    margin-bottom: 30px;
+    animation: float 3s ease-in-out infinite;
 }
 
-/* Floating animation */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -58,19 +50,6 @@ body {
     }
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Buttons container */
 .buttons {
     display: flex;
     justify-content: center;
@@ -78,7 +57,6 @@ body {
     margin-top: 20px;
 }
 
-/* Navigation items */
 .nav-item {
     padding: 12px 24px;
     border: 1px solid var(--glass-border);
@@ -98,7 +76,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Discord button */
 .discord-btn {
     background: var(--accent-purple);
     color: var(--primary-bg);
@@ -118,7 +95,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Subtext styles */
 .subtext {
     margin-top: 20px;
     font-size: 0.9rem;
@@ -126,7 +102,6 @@ body {
     opacity: 0.8;
 }
 
-/* Custom cursor */
 .custom-cursor {
     position: fixed;
     width: 20px;
