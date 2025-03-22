@@ -1,9 +1,9 @@
 :root {
-    --primary-bg: #0a0a0a;
+    --primary-bg: #000000; /* Black background */
     --secondary-bg: rgba(26, 26, 26, 0.8);
-    --accent-purple: #7d4fff;
-    --text-light: #f0f0f0;
-    --glow-shadow: 0 0 15px rgba(125, 79, 255, 0.5);
+    --accent-purple: #7d4fff; /* Purple accent color */
+    --text-light: #f0f0f0; /* Light text color */
+    --glow-shadow: 0 0 15px rgba(125, 79, 255, 0.5); /* Purple glow shadow */
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
 }
