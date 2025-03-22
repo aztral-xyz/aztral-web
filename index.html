@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aztral.xyz</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your styles.css -->
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Fade-in and fade-out animation */
+        
         @keyframes fadeInOut {
             0% { opacity: 0; transform: translateY(-20px); }
             50% { opacity: 1; transform: translateY(0); }
@@ -18,7 +18,7 @@
             animation: fadeInOut 4s ease-in-out forwards;
         }
 
-        /* Ensure the body takes full height and centers content */
+        
         body {
             display: flex;
             align-items: center;
@@ -26,25 +26,36 @@
             min-height: 100vh;
             margin: 0;
             overflow: hidden;
-            background: #000000; /* Black background */
+            background: #000000; 
         }
 
-        /* Override h1 styles for the initial animation */
+        
         .initial-h1 {
             font-size: 4rem;
             font-weight: 700;
-            color: #7d4fff; /* Purple text */
-            text-shadow: 0 0 10px #7d4fff, 0 0 20px #7d4fff, 0 0 40px #7d4fff; /* Purple glow shadow */
+            color: #7d4fff; 
+            text-shadow: 0 0 10px #7d4fff, 0 0 20px #7d4fff, 0 0 40px #7d4fff; 
         }
     </style>
     <script>
-        // Redirect to index.html after the animation completes (4 seconds)
+        
         setTimeout(function() {
-            window.location.href = 'index.html'; // Redirects to index.html
-        }, 4000); // 4 seconds = fade in (2s) + fade out (2s)
+            window.location.href = 'index.html'; 
+        }, 4000); 
     </script>
 </head>
 <body>
     <h1 class="initial-h1 animate-fadeInOut">aztral.xyz</h1>
+
+    
+    <script src="app.js"></script>
+    <script src="audio-handler.js"></script>
+    <script src="backup.js"></script>
+    <script src="cursor.js"></script>
+    <script src="data-loader.js"></script>
+    <script src="particles.js"></script>
+    <script src="shader-fragment.js"></script>
+    <script src="shader-vertex.js"></script>
+    <script src="websocket.js"></script>
 </body>
 </html>
