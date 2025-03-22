@@ -1,24 +1,22 @@
-class AudioDNA {
-    constructor() {
-        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        this.analyser = this.audioContext.createAnalyser();
-        this.initAudioStream();
-    }
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const analyser = audioContext.createAnalyser();
+analyser.fftSize = 256;
 
-    initAudioStream() {
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(stream => {
-                const source = this.audioContext.createMediaStreamSource(stream);
-                source.connect(this.analyser);
-                this.analyser.connect(this.audioContext.destination);
-                this.analyser.fftSize = 2048;
-            });
-    }
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
 
-    getFrequencyData() {
-        const bufferLength = this.analyser.frequencyBinCount;
-        const dataArray = new Uint8Array(bufferLength);
-        this.analyser.getByteFrequencyData(dataArray);
-        return dataArray;
-    }
+const audioElement = document.createElement('audio');
+audioElement.src = 'assets/audio/background.mp3';
+audioElement.loop = true;
+audioElement.play();
+
+const source = audioContext.createMediaElementSource(audioElement);
+source.connect(analyser);
+analyser.connect(audioContext.destination);
+
+function visualizeAudio() {
+    requestAnimationFrame(visualizeAudio);
+    analyser.getByteFrequencyData(dataArray);
+
+    
 }
